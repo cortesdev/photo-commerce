@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import '../slider.css'
 
 const Product = ({ product }) => {
-  console.log(product)
+  // console.log(product)
+
   return (
-    <Link>
+    <Link to={`/product/${product.id}`}>
       <div className='grad w-full rounded-[8px] overflow-hidden h-[362px] group'>
         <div className='w-full h-[200px] flex items-center justify-center relative'>
           <div className='absolute rounded-full z-10 text-[12px] px-2 right-2 top-2 bg-accent text-black'>New</div>
