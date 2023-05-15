@@ -1,7 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Product = () => {
-  return <div>Product</div>;
+const Product = ({ product }) => {
+  console.log(product)
+  return (
+    <Link>
+      <div>
+        <img
+          src={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
+          alt=""
+          class=""
+        />
+      </div>
+    </Link>);
 };
 
 export default Product;

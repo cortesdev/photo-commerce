@@ -10,8 +10,10 @@ import Product from '../components/Product'
 const ProductSlider = ({ data }) => {
   // console.log(data)
   return <Swiper>
-    {data.map((product) => {
-      return <SwiperSlide>slide</SwiperSlide>
+    {data?.map((product) => {
+      return <SwiperSlide key={product.id}>
+        <Product product={product} />
+      </SwiperSlide>
     })}
   </Swiper>;
 };

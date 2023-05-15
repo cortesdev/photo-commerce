@@ -10,10 +10,9 @@ const Home = () => {
   // console.log('DATA', data)
 
   return <div className='mb-16'>
-    Home
 
     <div className='container mx-auto'>
-      <h2 className='m2 mb-6 text-center x1:text-left'>Latest Products</h2>
+      <h2 className='h2 mb-6 text-center x1:text-left'>Latest Products</h2>
     </div>
 
     <ProductSlider data={data} />
