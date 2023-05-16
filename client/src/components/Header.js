@@ -19,7 +19,7 @@ const Header = () => {
       <div className='flex flex-row gap-4'>
         <div className='justify-center'><FiMenu className='mt-2' /> </div>
         <Link to="/">
-          <img className='w-[200px]' src={logo} alt='logo' />
+          <img className='w-[240px] mt-1' src={logo} alt='logo' />
         </Link>
 
         <div onClikc={() => setCatNavMobile(!catNavMobile)} className={`${catNavMobile ? 'left-0' : '-left-full'} fixed top-0 bottom-0 z-30 w-full`}>
