@@ -2,21 +2,22 @@ import React from 'react';
 // useFetch Home
 import useFetch from '../hooks/useFetch'
 import ProductSlider from '../components/ProductSlider'
+import LatestProducts from '../components/LatestProducts';
+import Hero from '../components/Hero';
+import CategoryNav from '../components/CategoryNav';
 
 
 const Home = () => {
 
-  const { data } = useFetch('/products?populate=*&filters[isNew]=true')
   // console.log('DATA', data)
 
-  return <div className='mb-16'>
+  return (
+    <section className=' '>
 
-    <div className='container mx-auto'>
-      <h2 className='h2 mb-6 text-center x1:text-left'>Latest Products</h2>
-    </div>
-
-    <ProductSlider data={data} />
-  </div>;
+      <Hero />
+      <LatestProducts />
+    </section>
+  );
 };
 
 export default Home;

@@ -29,7 +29,7 @@ const ProductSlider = ({ data }) => {
         spaceBetween: 30,
       },
       1440: {
-        slidesPerView: 5,
+        slidesPerView: 3,
         spaceBetween: 30,
       },
     }}
