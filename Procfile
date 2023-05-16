@@ -1,2 +1,2 @@
-web: node client/src/index.js
+web: npm start client/
 api: node api/index.js
