@@ -1,7 +1,10 @@
 import React from 'react';
+import LatestProducts from './LatestProducts';
 
 const MainSlider = () => {
-  return <div>MainSlider</div>;
+  return <div>
+    <LatestProducts />
+  </div>;
 };
 
 export default MainSlider;
