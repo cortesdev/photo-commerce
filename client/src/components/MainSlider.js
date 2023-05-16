@@ -3,8 +3,7 @@ import LatestProducts from './LatestProducts';
 
 const MainSlider = () => {
   return <div>
-    <LatestProducts />
-  </div>;
+    MainSlider  </div>;
 };
 
 export default MainSlider;

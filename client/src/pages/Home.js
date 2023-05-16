@@ -1,11 +1,13 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import LatestProducts from '../components/LatestProducts';
 
 
 const Home = () => {
   return (
-    <section className='flex w-full  mb-16'>
+    <section>
       <Hero />
+      <LatestProducts />
     </section>
   );
 };
