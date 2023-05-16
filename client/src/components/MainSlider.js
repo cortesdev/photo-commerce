@@ -60,6 +60,10 @@ const MainSlider = () => {
                   src={slide.img}
                   alt='camera' />
               </div>
+
+              <button className='rounded-[8px] font-semibold uppercase bg-accent text-black p-4 '>
+                Shop now
+              </button>
             </div>
           </div>
 
