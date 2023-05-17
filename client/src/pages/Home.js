@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import LatestProducts from '../components/LatestProducts';
+import Professionals from '../components/Professionals';
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <section>
       <Hero />
       <LatestProducts />
+      <Professionals />
     </section>
   );
 };

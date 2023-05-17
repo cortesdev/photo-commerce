@@ -18,23 +18,26 @@ const Search = () => {
       <div className='container mx-auto'>
         <div className='md:flex w-full gap-x-[30px]'>
           <div className="hidden md:block">
-
             <CategoryNav />
           </div>
-          <div className="text-3xl mb-[30px]">
-            {data?.length > 0 ? `${data.length} results  for ${searchTerm}` :
-              `No results found for ${searchTerm}.`}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-1">
-            {data?.map((product) => {
-              return (
-                <>
-                  <Product product={product} />
-                </>
-              )
-            })}
-          </div>
+          <div className="md:flex md:flex-col">
 
+            <div className="text-3xl mb-[30px]">
+              {data?.length > 0 ? `${data.length} results for ${searchTerm}` :
+                `No results found for ${searchTerm}.`}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-1">
+              {data?.map((product) => {
+                return (
+                  <>
+                    <Product product={product} />
+                  </>
+                )
+              })}
+            </div>
+
+          </div>
 
         </div>
       </div>
