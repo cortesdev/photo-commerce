@@ -13,7 +13,7 @@ const Product = ({ product }) => {
           <img
             src={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
             alt=""
-            className="w-[160px] h-[160px] group-hover:scale-90"
+            className="camera w-[160px] h-[160px] group-hover:scale-90"
           />
         </div>
 

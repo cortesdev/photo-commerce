@@ -13,11 +13,11 @@ import Search from './pages/Search';
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <main>
       <Header />
       {children}
       <Footer />
-    </>
+    </main>
   );
 }
 

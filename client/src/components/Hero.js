@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CategoryNav from '../components/CategoryNav'
 import MainSlider from '../components/MainSlider'
 import PromoImg1 from '../img/promo_img1.png'
 import PromoImg2 from '../img/promo_img2.png'
 
 const Hero = () => {
-
+  const [catNavMobile, setCatNavMobile] = useState(false)
   return (
-    <section className='mb-[30px] mt-[100px] pt-36 lg:pt-0 '>
+    <section className='mb-[30px] mt-[120px] pt-36 lg:pt-0 '>
       {/* */}
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-[30px] xl:flex-row xl:gap-x-[30px]">
-          <div className="w-full max-w-lg lg:max-w-[734px] mx-auto">
-            <CategoryNav />
+          <div className={`${catNavMobile ? 'left-0' : '-left-full'} fixed top-0 bottom-0 z-30 w-full transition-all duration-200`}>
+            <CategoryNav className="" setCatNavMobile={setCatNavMobile} />
           </div>
 
           <div className="w-full max-w-lg lg:max-w-[734px] mx-auto">

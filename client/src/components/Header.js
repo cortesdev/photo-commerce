@@ -11,43 +11,59 @@ import CartContext from '../context/CartContext';
 
 const Header = () => {
   const { isOpen, setIsOpen } = useContext(CartContext)
+  // console.log(isOpen)
+
   const [catNavMobile, setCatNavMobile] = useState(false)
-  console.log(isOpen)
+
+  function ExpandToggle(catNavMobileProps) {
+    setCatNavMobile(true)
+  };
+
+  const toggle = () => {
+    setCatNavMobile(false);
+  };
+
   return <header className='bg-primary py-6 fixed w-full top-0 z-40 flex p-5'>
 
     <div className='container mx-auto'>
-      <div className='flex flex-row gap-4'>
-        <div className='justify-center'><FiMenu className='mt-2' /> </div>
-        <Link to="/">
-          <img className='w-[240px] mt-1' src={logo} alt='logo' />
-        </Link>
+      <div className='flex flex-1 flex-row justify-between gap-4'>
+        <div className='flex gap-4' >
+          <div onClick={() => ExpandToggle()} className='lg:hidden align-center justify-center'>
+            <FiMenu className='mt-3' />
+          </div>
 
-        <div onClikc={() => setCatNavMobile(!catNavMobile)} className={`${catNavMobile ? 'left-0' : '-left-full'} fixed top-0 bottom-0 z-30 w-full`}>
-          <CategoryNavMobile />
+          <Link to="/">
+            <img className='w-[240px] mt-1' src={logo} alt='logo' />
+          </Link>
+
+        </div>
+        <div className={`${catNavMobile ? 'left-0' : '-left-full'} fixed top-0 bottom-0 z-30 w-full`}>
+          <CategoryNavMobile toggle={toggle} />
         </div>
 
-        <div className='w-full hidden xl:flex xl:max-w-[734px]'>
+        <div className='w-full hidden lg:flex xl:max-w-[734px]'>
           <SearchForm />
         </div>
 
-        <div className='flex gap-2 relative cursor-pointer'>
-          <div>Need Help? 123 456 6775</div>
+        <div className='flex gap-2 relative cursor-pointer items-center'>
+          <div className='hidden lg:block'>Need Help? 123 456 6775</div>
           <div className="flex gap-2" onClick={() => setIsOpen(!isOpen)}>
             <div><SlBag className='text-2xl' /> </div>
-            <div>2</div>
+            <div className='absolute rounded-full z-10 text-[12px] px-2 right-[-10px] bottom-0 h-5 bg-accent text-black'>2</div>
           </div>
         </div>
 
         <div className={`
-    ${isOpen ? 'right-0' : '-right-full'} bg-[#0e0f10]
-    shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[400px]
-    `
+            ${isOpen ? 'right-0' : '-right-full'} bg-[#0e0f10]
+            shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[400px]
+         `
         }>
           <Cart setIsOpen={setIsOpen} />
         </div>
-        <div className='hidden'>
-          <SearchForm />
-        </div>
+
+      </div>
+      <div className='flex my-2 lg:hidden'>
+        <SearchForm />
       </div>
     </div>
   </header>;
