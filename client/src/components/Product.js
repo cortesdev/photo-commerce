@@ -10,6 +10,7 @@ const Product = ({ product }) => {
       <div className='grad w-full rounded-[8px] overflow-hidden h-[362px] group'>
         <div className='w-full h-[200px] flex items-center justify-center relative'>
           <div className='absolute rounded-full z-10 text-[12px] px-2 right-2 top-2 bg-accent text-black'>New</div>
+
           <img
             src={`http://localhost:1337${product.attributes.image.data.attributes.url}`}
             alt=""
