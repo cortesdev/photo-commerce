@@ -28,6 +28,7 @@ const ProductDetails = () => {
           <div className='text-2xl mb-2 text-accent'> {data[0].attributes.categories.data[0].attributes.title}</div>
           <h2 className='text-3xl mb-2'> {data[0].attributes.title}</h2>
           <p> {data[0].attributes.description}</p>
+          <div>€{data[0].attributes.price}</div>
 
           <button type=""
             className="bg-accent capitalize text-black mt-5 px-6 py-3 rounded-[8px] font-semibold">
