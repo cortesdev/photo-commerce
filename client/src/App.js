@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // components
@@ -12,9 +12,11 @@ import ProductDetails from './pages/ProductDetails';
 import Search from './pages/Search';
 
 const Layout = ({ children }) => {
+  const [darkmode, setDarkMode] = useState(true);
+
   return (
-    <main>
-      <Header />
+    <main className={`${darkmode ? 'bg-transparent text-white' : 'bg-white text-black'}`}>
+      <Header darkmode={darkmode} setDarkMode={setDarkMode} />
       {children}
       <Footer />
     </main>

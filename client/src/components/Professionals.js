@@ -3,7 +3,9 @@ import ProductSlider from './ProductSlider';
 import useFetch from '../hooks/useFetch';
 
 const Professionals = () => {
-    const { data } = useFetch('/products?populate=*&categories[professional]=true')
+    const { data } = useFetch('/products?populate=*&filter[categories]')
+
+
     return (
         <section className='mb-16'>
 

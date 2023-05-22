@@ -42,7 +42,7 @@ const SearchForm = () => {
     >
       <input
         onChange={handleSearchInput}
-        className='input'
+        className='input  dark:bg-[#fff] bg-[#f1f1f1]'
         type='text'
         placeholder='Search for a product...'
       />

@@ -7,7 +7,7 @@ import logo from '../img/logo.png';
 const CategoryNavMobile = ({ toggle, setCatNavMobile }) => {
   const { data } = useFetch('/categories')
 
-  return <div className='flex flex-wrap h-full w-full bg-primary'>
+  return <div className='flex flex-wrap h-full w-full dark:bg-primary'>
     <div className='w-full p-4'>
       <div
         onClick={() => toggle()}

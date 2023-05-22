@@ -30,20 +30,19 @@ const MainSlider = () => {
     pagination={{
       clickable: true
     }}
-    className='mainSlider  mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px] h-full bg-primary xl:bg-mainSlider xl:bg-no-repeat 
-      max-w-lg lg:max-w-none rounder-[8px] overflow-hidden drop-shadow-2xl'
+    className='grad mainSlider mx-auto md:max-w-lg xl:max-w-[1410px] h-full xl:bg-mainSlider xl:bg-no-repeat 
+      max-w-xl lg:max-w-none rounder-[8px] overflow-hidden drop-shadow-2xl'
   >
     {sliderData?.map((slide, index) => {
       return (
         <SwiperSlide key={index}>
-          <div className='flex flex-col lg:flex-row h-full p-[20px] md:p-[60px]'>
+          <div className='flex flex-col lg:flex-row h-full p-[20px] md:p-[60px] '>
             <div className='w-full lg:flex-1'>
 
-              <div className='mb-1 lg:text-left   uppercase
-              '>
+
+              <div className='mb-1 lg:text-left uppercase  '>
                 {slide.pretitle}
               </div>
-
               <div className='text-3xl md:text-[46px] font-semibold uppercase
              leading-none text-center lg:text-left mb-8 xl:mb-20'>
                 {slide.titlePart1} <br />
@@ -60,7 +59,7 @@ const MainSlider = () => {
                   alt='camera' />
               </div>
 
-              <button className='rounded-[8px] font-semibold uppercase bg-accent text-black p-4 '>
+              <button className='rounded-[8px] font-semibold uppercase bg-accent p-4 text-black'>
                 Shop now
               </button>
             </div>

@@ -1,15 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { SlBag } from 'react-icons/sl'
-import { FiMenu } from 'react-icons/fi'
+import { FiSun, FiMoon, FiMenu } from 'react-icons/fi'
 import logo from '../img/logo.png'
+import logoDark from '../img/logo-black.png'
 import CategoryNavMobile from '../components/CategoryNavMobile'
 import SearchForm from '../components/SearchForm'
 import Cart from '../components/Cart'
 import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
 
-const Header = () => {
-  const { isOpen, setIsOpen, cart, amount } = useContext(CartContext)
+const Header = ({ darkmode, setDarkMode }) => {
+  const { isOpen, setIsOpen, cart, itemsAmount } = useContext(CartContext)
   // console.log(isOpen)
 
   const [catNavMobile, setCatNavMobile] = useState(false)
@@ -22,7 +23,7 @@ const Header = () => {
     setCatNavMobile(false);
   };
 
-  return <header className='bg-primary py-6 fixed w-full top-0 z-40 flex p-5'>
+  return <header className={`${darkmode ? 'bg-primary text-white' : 'bg-white text-black shadow-lg'}  py-6 fixed w-full top-0 z-40 flex p-5`} >
 
     <div className='container mx-auto'>
       <div className='flex flex-1 flex-row justify-between gap-4'>
@@ -32,7 +33,7 @@ const Header = () => {
           </div>
 
           <Link to="/">
-            <img className='w-[240px] mt-1' src={logo} alt='logo' />
+            <img className='w-[240px] mt-1' src={darkmode === true ? logo : logoDark} alt='logo' />
           </Link>
 
         </div>
@@ -46,14 +47,23 @@ const Header = () => {
 
         <div className='flex gap-2 relative cursor-pointer items-center'>
           <div className='hidden lg:block'>Need Help? 123 456 6775</div>
-          <div className="flex gap-2" onClick={() => setIsOpen(!isOpen)}>
+
+          <div className="relative flex gap-2" onClick={() => setIsOpen(!isOpen)}>
             <div><SlBag className='text-2xl' /> </div>
+            {itemsAmount > 0 ?
 
-            <div
-              className='absolute rounded-full z-10 text-[12px] px-2 right-[-10px] bottom-0 h-5 bg-accent text-black'>
-              {amount}
+              <div
+                className='absolute rounded-full z-10 text-[13px] px-2 right-[-10px] bottom-[-10px] h-5 bg-accent text-black'>
+                {itemsAmount}
+              </div>
+              :
+              ''
+            }
+          </div>
 
-            </div>
+          <div onClick={() => setDarkMode(!darkmode)} className='flex'>
+            {darkmode === true ? <FiSun className='text-2xl' /> : <FiMoon className='text-2xl' />}
+            {/* {darkmode === true ? 'dark' : 'logoDark'} */}
           </div>
         </div>
 
@@ -70,7 +80,7 @@ const Header = () => {
         <SearchForm />
       </div>
     </div>
-  </header>;
+  </header >;
 };
 
 export default Header;

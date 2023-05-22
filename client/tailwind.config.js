@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
@@ -25,9 +26,9 @@ module.exports = {
           hover: '#E1B72E',
         },
       },
-      backgroundImage: {
-        mainSlider: "url('img/mainSlider_bg.png')",
-      },
+      // backgroundImage: {
+      //   mainSlider: "url('img/mainSlider_bg.png')",
+      // },
       keyframes: {
         shake: {
           '10%, 90%': { transform: 'translate3d(-1px, 0,0 )' },

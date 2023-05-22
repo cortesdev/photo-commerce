@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 
 
@@ -8,6 +8,15 @@ const CartProvider = ({ children }) => {
     const [itemsAmount, setItemsAmount] = useState(0);
     const [amount, setAmount] = useState(0);
     const [total, setTotal] = useState(0);
+
+
+    useEffect(() => {
+        const amount = cart.reduce((a, c) => {
+            return a + c.amount;
+        }, 0)
+
+        setItemsAmount(amount)
+    }, [cart])
 
     const addToCart = (item, id) => {
         const itemId = parseInt(id)
@@ -37,6 +46,7 @@ const CartProvider = ({ children }) => {
         setIsOpen(true)
     }
 
+
     const removeFromCart = (id) => {
         const newCart = cart.filter(item => {
             return item.id !== id
@@ -45,10 +55,47 @@ const CartProvider = ({ children }) => {
         setCart(newCart)
     }
 
+    const handleInput = (e, id) => {
+        const value = parseInt(e.target.value)
+
+        const cartItem = cart.find(item => {
+            return item.id === id;
+        })
+
+        console.log(cartItem)
+
+        if (cartItem) {
+            const newCart = cart.map((item) => {
+                if (item.id === id) {
+                    if (isNaN(value)) {
+                        setAmount(1)
+                        return { ...item, amount: 1 }
+                    } else {
+                        setAmount(value);
+                        return { ...item, amount: value }
+                    }
+                } else {
+                    return item
+                }
+            })
+            setCart(newCart)
+        }
+        setIsOpen(true)
+    }
+
     console.log(cart)
 
     return (
-        <CartContext.Provider value={{ isOpen, setIsOpen, addToCart, cart, amount, removeFromCart }}>
+        <CartContext.Provider
+            value={{
+                isOpen,
+                setIsOpen,
+                addToCart,
+                cart,
+                itemsAmount,
+                removeFromCart,
+                handleInput
+            }}>
             {children}
         </CartContext.Provider>
     );

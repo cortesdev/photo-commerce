@@ -14,7 +14,7 @@ const ProductSlider = ({ data }) => {
     pagination={{
       clickable: true
     }}
-    className='productSlider mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px]'
+    className='productSlider mx-auto max-w-[360px] md:max-w-full xl:max-w-[1410px]'
     breakpoints={{
       320: {
         slidesPerView: 1,
@@ -22,14 +22,14 @@ const ProductSlider = ({ data }) => {
       },
       768: {
         slidesPerView: 2,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
       1024: {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
       1440: {
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 30,
       },
     }}
