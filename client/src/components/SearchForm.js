@@ -1,26 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom';
 
-const isAnimating = true
 
 const SearchForm = () => {
+  const [isAnimating, setIsAnimating] = useState(false)
   const navigate = useNavigate()
-
   const [sarchTerm, setSearchTerm] = useState('')
 
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsAnimating(false)
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  })
+
   const handleSearchInput = (e) => {
-    setSearchTerm(e.target.value)
+    setSearchTerm(e.target.value);
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(sarchTerm)
+    e.preventDefault();
+    console.log(sarchTerm);
 
     if (sarchTerm.length > 0) {
-      navigate(`/search?query=${sarchTerm}`)
+      navigate(`/search?query=${sarchTerm}`);
+      document.querySelector('input').value = '';
+      setSearchTerm('')
     } else {
-      console.log('search for something')
+      // console.log('search for something');
+      setIsAnimating(true)
     }
   }
 

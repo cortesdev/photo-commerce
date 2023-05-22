@@ -1,27 +1,52 @@
-import React from 'react';
-import { SwiperSlide } from 'swiper/react';
+import React, { useEffect, useState } from 'react';
 import Product from '../components/Product';
 import useFetch from '../hooks/useFetch';
 import CategoryNav from '../components/CategoryNav';
+import { useParams } from 'react-router-dom';
 
 const Products = () => {
-  const { data } = useFetch('/products?populate=*')
+  const { id } = useParams();
 
-  return <div className="mt-[200px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-1">
-    <div className="text-3xl">
-      Products
+  // console.log(id)
+
+  const { data } = useFetch(
+    `/products?populate=*&filters[categories][id][$eq]=${id}`
+  )
+
+  // console.log(data)
+
+
+  const [title, setTitle] = useState(null);
+
+  useEffect(() => {
+    if (data) {
+      setTitle(data[0].attributes.categories.data[0].attributes.title)
+    }
+  })
+
+  return <div className="mt-[200px] pt-40 lg:pt-0">
+    <div className="flex gap-x-[30px] container mx-auto ">
+
+      <div className="hidden md:block">
+        <CategoryNav />
+      </div>
+
+      <main className='px-5 '>
+        <div className="text-3xl mb-5 capitalize">
+          {title} Cameras
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[15px] md:gap-[20px]">
+          {data?.map((product) => {
+            return <>
+              <Product product={product} key={product.id} />
+            </>
+          })}
+        </div>
+      </main>
     </div>
-
-    <div className="hidden md:block">
-      <CategoryNav />
-    </div>
-
-    {data?.map((product) => {
-      return <>
-        <Product product={product} />
-      </>
-    })}
-  </div>;
+  </div>
+    ;
 };
 
 export default Products;

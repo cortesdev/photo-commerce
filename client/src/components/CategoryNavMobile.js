@@ -11,7 +11,8 @@ const CategoryNavMobile = ({ toggle, setCatNavMobile }) => {
     <div className='w-full p-4'>
       <div
         onClick={() => toggle()}
-        className='flex w-full flex-1 justify-between hover:text-accent '>
+        className='flex w-full flex-1 justify-between hover:text-accent '
+      >
         <Link to="/">
           <img className='w-[240px] mt-1' src={logo} alt='logo' />
         </Link>
@@ -25,10 +26,10 @@ const CategoryNavMobile = ({ toggle, setCatNavMobile }) => {
           return <Link
             key={category.id}
             onClick={() => toggle()}
-            to={`/products/${category.id}`}
+            to={`products/${category.id}`}
             className="hover:text-accent text-4xl py-3 cursor-pointer uppercase"
           >
-            {category.attributes.title}
+            {category.attributes.title} Cameras
           </Link>
         })}
       </div>

@@ -9,13 +9,15 @@ const CategoryNav = () => {
     <aside className='bg-primary w-[286px] h-[350px] rounded-[8px] overflow-hidden xl-flex'>
       <div className='bg-accent py-4 text-primary uppercase text-center justify-center font-semibold'>Browse Categories</div>
       <div className='flex flex-col gap-y-6 p-6'>
+
         {data?.map((category) => {
           return <Link
             key={category.id}
-            to={`/products/${category.id}`}
-            className="cursor-pointer uppercase"
+            // onClick={() => toggle()}
+            to={`products/${category.id}`}
+            className="hover:text-accent text-2xl py-1 cursor-pointer uppercase"
           >
-            {category.attributes.title}
+            {category.attributes.title} Cameras
           </Link>
         })}
       </div>
