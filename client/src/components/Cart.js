@@ -4,7 +4,7 @@ import CartItem from './CartItem'
 import CartContext from '../context/CartContext';
 
 const Cart = () => {
-  const { setIsOpen, cart } = useContext(CartContext);
+  const { setIsOpen, cart, removeFromCart, amount } = useContext(CartContext);
 
   return <div className=' p-4  shadow-xl'>
     <div className='flex justify-between flex-1 flex-row'>
@@ -21,7 +21,7 @@ const Cart = () => {
       {cart.map(item => {
         return (
           <div className='flex flex-col'>
-            <CartItem item={item} key={item.id} />
+            <CartItem removeFromCart={removeFromCart} item={item} key={item.id} />
           </div>
         )
       })}

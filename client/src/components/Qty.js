@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Qty = () => {
-  return <div>Qty</div>;
+  return <input type='nuber'></input>;
 };
 
 export default Qty;

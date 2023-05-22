@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-
 import { SlBag } from 'react-icons/sl'
 import { FiMenu } from 'react-icons/fi'
 import logo from '../img/logo.png'
@@ -10,7 +9,7 @@ import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
 
 const Header = () => {
-  const { isOpen, setIsOpen, cart } = useContext(CartContext)
+  const { isOpen, setIsOpen, cart, amount } = useContext(CartContext)
   // console.log(isOpen)
 
   const [catNavMobile, setCatNavMobile] = useState(false)
@@ -49,7 +48,12 @@ const Header = () => {
           <div className='hidden lg:block'>Need Help? 123 456 6775</div>
           <div className="flex gap-2" onClick={() => setIsOpen(!isOpen)}>
             <div><SlBag className='text-2xl' /> </div>
-            <div className='absolute rounded-full z-10 text-[12px] px-2 right-[-10px] bottom-0 h-5 bg-accent text-black'>2</div>
+
+            <div
+              className='absolute rounded-full z-10 text-[12px] px-2 right-[-10px] bottom-0 h-5 bg-accent text-black'>
+              {amount}
+
+            </div>
           </div>
         </div>
 
