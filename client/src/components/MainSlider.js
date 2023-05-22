@@ -1,9 +1,8 @@
 import React from 'react';
-import LatestProducts from './LatestProducts';
 import CameraImg from '../img/camera.png'
+import CameraImg2 from '../img/camera2.png'
 import { SwiperSlide, Swiper } from 'swiper/react';
-import Product from './Product';
-import { Pagination, Navigation } from 'swiper';
+import { Pagination } from 'swiper';
 
 // data
 const sliderData = [
@@ -17,11 +16,11 @@ const sliderData = [
     btnText: 'Shop now'
   },
   {
-    img: CameraImg,
+    img: CameraImg2,
     pretitle: 'Special offer',
-    titlePart1: 'Save 20%',
+    titlePart1: 'Save 25%',
     titlePart2: 'On your',
-    titlePart3: 'first order',
+    titlePart3: 'second order',
     btnText: 'Shop now',
   }];
 
