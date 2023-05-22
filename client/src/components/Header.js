@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
 
 const Header = () => {
-  const { isOpen, setIsOpen } = useContext(CartContext)
+  const { isOpen, setIsOpen, cart } = useContext(CartContext)
   // console.log(isOpen)
 
   const [catNavMobile, setCatNavMobile] = useState(false)
@@ -58,7 +58,7 @@ const Header = () => {
             shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[400px]
          `
         }>
-          <Cart setIsOpen={setIsOpen} />
+          <Cart cart={cart} setIsOpen={setIsOpen} />
         </div>
 
       </div>
