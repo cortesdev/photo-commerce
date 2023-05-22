@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "strapi-sqlite",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,21 +11,19 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.10.5",
-    "@strapi/plugin-users-permissions": "4.10.5",
-    "@strapi/strapi": "4.10.5",
-    "better-sqlite3": "8.0.1",
-    "pg": "^8.11.0",
-    "pg-connection-string": "^2.6.0"
+    "@strapi/plugin-i18n": "4.1.7",
+    "@strapi/strapi": "4.1.7",
+    "@strapi/plugin-users-permissions": "4.1.7",
+    "sqlite3": "^5.0.2"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "1ebe2546-8e44-46eb-9e23-e3525a689cee"
+    "uuid": "b4a9b934-98e8-401e-9f60-ad3319a3e359"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=10.0.0",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
