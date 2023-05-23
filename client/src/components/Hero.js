@@ -11,7 +11,7 @@ const Hero = () => {
       {/* */}
       <div className="container mx-auto  md:pt-[200px] lg:pt-[150px] ">
         <div className="flex flex-col gap-y-[30px] xl:flex-row xl:gap-x-[30px]">
-          <div className={`${catNavMobile ? 'left-0' : '-left-full'} fixed top-0 bottom-0 z-30 w-full transition-all duration-200`}>
+          <div className='hidden xl:block'>
             <CategoryNav className="" setCatNavMobile={setCatNavMobile} />
           </div>
 
@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>);
+    </section >);
 };
 
 export default Hero;

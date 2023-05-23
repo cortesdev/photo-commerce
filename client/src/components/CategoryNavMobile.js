@@ -7,7 +7,7 @@ import logo from '../img/logo.png';
 const CategoryNavMobile = ({ toggle, setCatNavMobile }) => {
   const { data } = useFetch('/categories')
 
-  return <div className='flex flex-wrap h-full w-full dark:bg-primary'>
+  return <div className='flex flex-wrap h-full w-full bg-primary'>
     <div className='w-full p-4'>
       <div
         onClick={() => toggle()}
@@ -21,13 +21,13 @@ const CategoryNavMobile = ({ toggle, setCatNavMobile }) => {
       </div>
 
 
-      <div className='flex flex-col'>
+      <div className='flex flex-col mt-5'>
         {data?.map((category) => {
           return <Link
             key={category.id}
             onClick={() => toggle()}
             to={`products/${category.id}`}
-            className="hover:text-accent text-4xl py-3 cursor-pointer uppercase"
+            className="hover:text-accent text-2xl py-3 cursor-pointer uppercase"
           >
             {category.attributes.title} Cameras
           </Link>

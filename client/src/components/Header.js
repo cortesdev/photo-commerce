@@ -46,7 +46,10 @@ const Header = ({ darkmode, setDarkMode }) => {
         </div>
 
         <div className='flex gap-2 relative cursor-pointer items-center'>
-          <div className='hidden lg:block'>Need Help? 123 456 6775</div>
+          <div className='hidden lg:flex'>
+            <div class="mr-2">
+              Need Help?
+            </div> 123 456 6775</div>
 
           <div className="relative flex gap-2" onClick={() => setIsOpen(!isOpen)}>
             <div><SlBag className='text-2xl' /> </div>
@@ -61,10 +64,10 @@ const Header = ({ darkmode, setDarkMode }) => {
             }
           </div>
 
-          <div onClick={() => setDarkMode(!darkmode)} className='flex'>
+          {/* <div onClick={() => setDarkMode(!darkmode)} className='flex'>
             {darkmode === true ? <FiSun className='text-2xl' /> : <FiMoon className='text-2xl' />}
-            {/* {darkmode === true ? 'dark' : 'logoDark'} */}
-          </div>
+          </div> */}
+          {/* {darkmode === true ? 'dark' : 'logoDark'} */}
         </div>
 
         <div className={`

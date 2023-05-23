@@ -33,7 +33,7 @@ const ProductDetails = () => {
           <h2 className='text-4xl my-4'>{data[0].attributes.title}</h2>
           <p>{data[0].attributes.description}</p>
 
-          <div className="flex gap-x-8 items-center mt-auto mt-8">
+          <div className="flex gap-x-8 items-center mt-8">
             <div className='text-3xl text-accent font-semibold'>€{data[0].attributes.price}</div>
 
             <button

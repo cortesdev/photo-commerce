@@ -95,6 +95,9 @@ const CartProvider = ({ children }) => {
         setIsOpen(true)
     }
 
+    const clearCart = () => {
+        setCart([])
+    }
     // console.log(cart)
 
     return (
@@ -108,7 +111,8 @@ const CartProvider = ({ children }) => {
                 itemsAmount,
                 removeFromCart,
                 handleInput,
-                total
+                total,
+                clearCart
             }}>
             {children}
         </CartContext.Provider>

@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { FiX } from 'react-icons/fi';
 import CartItem from './CartItem'
 import CartContext from '../context/CartContext';
+import { IoIosArrowForward } from 'react-icons/io';
+import { IoCartOutline } from 'react-icons/io5';
 
 const Cart = () => {
-  const { setIsOpen, cart, removeFromCart, amount, total } = useContext(CartContext);
+  const { setIsOpen, cart, removeFromCart, amount, total, clearCart } = useContext(CartContext);
 
   return <div className='flex flex-col  p-4 shadow-xl h-full'>
     <div className='flex justify-between flex-1 flex-row max-h-[40px]'>
@@ -52,12 +54,19 @@ const Cart = () => {
     <div className="mt-8">
       {cart.length >= 1 ?
         <div className='flex gap-8'>
-          <button type="" className="btn btn-accent w-[50%]">keep</button>
-          <button type="" className="btn btn-accent w-[50%]">checkout</button>
+          <button onClick={clearCart} className="btn btn-accent w-[50%]">Clear Cart</button>
+          <button type="" className="btn btn-accent w-[50%]">Checkout
+            <IoIosArrowForward className='text-lg' />
+          </button>
         </div>
         :
-        <div className=" ">
-          Your cart is empty
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2        ">
+          <div class="flex flex-col items-center">
+            <div className="text-2xl">
+              Your cart is empty
+            </div>
+            <IoCartOutline className='text-6xl' />
+          </div>
         </div>
       }
     </div>
