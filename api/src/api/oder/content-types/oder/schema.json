@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "oders",
+  "info": {
+    "singularName": "oder",
+    "pluralName": "oders",
+    "displayName": "oder"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stripeId": {
+      "type": "text"
+    },
+    "products": {
+      "type": "json"
+    }
+  }
+}
