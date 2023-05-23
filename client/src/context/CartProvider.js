@@ -18,6 +18,18 @@ const CartProvider = ({ children }) => {
         setItemsAmount(amount)
     }, [cart])
 
+
+    useEffect(() => {
+        const total = cart.reduce((a, c) => {
+            return a + c.attributes.price * c.amount;
+        }, 0)
+
+        setTotal(total)
+    }, [cart])
+
+    console.log(total)
+
+
     const addToCart = (item, id) => {
         const itemId = parseInt(id)
         // console.log('added To Cart')
@@ -62,7 +74,7 @@ const CartProvider = ({ children }) => {
             return item.id === id;
         })
 
-        console.log(cartItem)
+        // console.log(cartItem)
 
         if (cartItem) {
             const newCart = cart.map((item) => {
@@ -83,7 +95,7 @@ const CartProvider = ({ children }) => {
         setIsOpen(true)
     }
 
-    console.log(cart)
+    // console.log(cart)
 
     return (
         <CartContext.Provider
@@ -92,9 +104,11 @@ const CartProvider = ({ children }) => {
                 setIsOpen,
                 addToCart,
                 cart,
+                amount,
                 itemsAmount,
                 removeFromCart,
-                handleInput
+                handleInput,
+                total
             }}>
             {children}
         </CartContext.Provider>
