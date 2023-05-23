@@ -30,7 +30,7 @@ const ProductDetails = () => {
 
         <div className='dark:bg-primary rounded-lg justify-center items-center p-5'>
           <div className='text-2xl uppercase mb-2 text-accent'>{data[0].attributes.categories.data[0].attributes.title}</div>
-          <h2 className='text-4xl my-4'>{data[0].attributes.title}</h2>
+          <h2 className='text-3xl my-4'>{data[0].attributes.title}</h2>
           <p>{data[0].attributes.description}</p>
 
           <div className="flex gap-x-8 items-center mt-8">

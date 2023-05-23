@@ -10,7 +10,7 @@ const Cart = () => {
 
   return <div className='flex flex-col  p-4 shadow-xl h-full'>
     <div className='flex justify-between flex-1 flex-row max-h-[40px]'>
-      <h1 className='text-4xl h-[30px]'>Cart</h1>
+      <h1 className='text-3xl h-[30px]'>Cart</h1>
 
       <div className='w-10 h-10 cursor-pointer hover:text-accent'>
         <FiX className="h-full w-full" onClick={() => setIsOpen(false)} />
